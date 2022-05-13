@@ -1,7 +1,7 @@
 """ RGB LIGHT CONTROLLER"""
 
 from tkinter import Menu, Button, messagebox as msg, Tk, Label, END
-from tkinter import Text
+from tkinter import Text, Scale, HORIZONTAL
 
 def helpmenu():
     """help menu function"""
@@ -40,10 +40,11 @@ class Rbg_Light_Controller():
         self.master.bind('<Alt-F4>', lambda event: self.exitmenu())
         self.master.bind('<Control-F1>', lambda event: helpmenu())
         self.master.bind('<Control-i>', lambda event: aboutmenu())
-
-
-
-
+    
+        self.redsliderleb = Label(self.master, text="RED")
+        self.redsliderleb.pack()
+        self.redslider = Scale(self.master, from_=0, to=255, tickinterval=100, orient=HORIZONTAL)
+        self.redslider.pack()
     
     def exitmenu(self):
         """exit menu function"""
