@@ -45,7 +45,18 @@ class Rbg_Light_Controller():
         self.redsliderleb.pack()
         self.redslider = Scale(self.master, from_=0, to=255, tickinterval=100, orient=HORIZONTAL)
         self.redslider.pack()
+
+        self.greensliderleb = Label(self.master, text="GREEN")
+        self.greensliderleb.pack()
+        self.greenslider = Scale(self.master, from_=0, to=255, tickinterval=100, orient=HORIZONTAL)
+        self.greenslider.pack()
+
+        self.bluesliderleb = Label(self.master, text="BLUE")
+        self.bluesliderleb.pack()
+        self.blueslider = Scale(self.master, from_=0, to=255, tickinterval=100, orient=HORIZONTAL)
+        self.blueslider.pack()
     
+
     def exitmenu(self):
         """exit menu function"""
         if msg.askokcancel("Quit?", "Really quit?"):
