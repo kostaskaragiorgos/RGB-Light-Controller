@@ -15,7 +15,7 @@ class Rbg_Light_Controller():
     def __init__(self, master):
         self.master = master
         self.master.title("RGB LIGHT CONTROLLER")
-        self.master.geometry("250x250")
+        self.master.geometry("200x300")
         self.master.resizable(False, False)
 
 
@@ -55,7 +55,9 @@ class Rbg_Light_Controller():
         self.bluesliderleb.pack()
         self.blueslider = Scale(self.master, from_=0, to=255, tickinterval=100, orient=HORIZONTAL)
         self.blueslider.pack()
-    
+        
+        self.setbutton = Button(self.master, text="SET")
+        self.setbutton.pack()
 
     def exitmenu(self):
         """exit menu function"""
