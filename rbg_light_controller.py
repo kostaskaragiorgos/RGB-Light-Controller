@@ -59,6 +59,9 @@ class Rbg_Light_Controller():
         self.setbutton = Button(self.master, text="SET")
         self.setbutton.pack()
 
+        self.onbutton = Button(self.master, text="ON")
+        self.onbutton.pack()
+
     def exitmenu(self):
         """exit menu function"""
         if msg.askokcancel("Quit?", "Really quit?"):
