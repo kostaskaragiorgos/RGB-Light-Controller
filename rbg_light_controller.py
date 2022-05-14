@@ -3,6 +3,8 @@ import serial
 from tkinter import Menu, Button, messagebox as msg, Tk, Label, END
 from tkinter import Text, Scale, HORIZONTAL
 
+from sqlalchemy import except_all
+
 def helpmenu():
     """help menu function"""
     msg.showinfo("HELP", "")
@@ -15,10 +17,13 @@ class Rbg_Light_Controller():
     def __init__(self, master):
         self.master = master
         self.master.title("RGB LIGHT CONTROLLER")
-        self.master.geometry("200x300")
+        self.master.geometry("200x350")
         self.master.resizable(False, False)
-        self.ser = serial.Serial('com3',9600)
-
+        try:
+            self.ser = serial.Serial('com3',9600)
+        except:
+            msg.showerror("ERROR", "UNABLE TO CONNECT")
+            self.master.destroy()
 
 
         self.menu = Menu(self.master)
