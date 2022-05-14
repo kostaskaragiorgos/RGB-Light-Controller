@@ -35,6 +35,7 @@ pip install -r requirements.txt
 
 ## Current_Version
 
+<p><img src ="images/RBG Controller Version.png" title = "RGB Controller Version"/> </p>
 
 
 ## Documentation
