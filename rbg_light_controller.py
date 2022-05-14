@@ -1,5 +1,5 @@
 """ RGB LIGHT CONTROLLER"""
-
+import serial
 from tkinter import Menu, Button, messagebox as msg, Tk, Label, END
 from tkinter import Text, Scale, HORIZONTAL
 
@@ -17,6 +17,7 @@ class Rbg_Light_Controller():
         self.master.title("RGB LIGHT CONTROLLER")
         self.master.geometry("200x300")
         self.master.resizable(False, False)
+        self.ser = serial.Serial('com3',9600)
 
 
 
@@ -56,7 +57,7 @@ class Rbg_Light_Controller():
         self.blueslider = Scale(self.master, from_=0, to=255, tickinterval=100, orient=HORIZONTAL)
         self.blueslider.pack()
         
-        self.setbutton = Button(self.master, text="SET")
+        self.setbutton = Button(self.master, text="SET", command=self.setcolor)
         self.setbutton.pack()
 
         self.onbutton = Button(self.master, text="ON")
@@ -64,6 +65,9 @@ class Rbg_Light_Controller():
 
         self.offbutton = Button(self.master, text="OFF")
         self.offbutton.pack()
+
+    def setcolor(self):
+        
 
     def exitmenu(self):
         """exit menu function"""
