@@ -67,6 +67,8 @@ class Rbg_Light_Controller():
         self.offbutton.pack()
 
     def setcolor(self):
+        myinput = ""+str(self.redslider.get())+str(self.greenslider.get())+str(self.blueslider.get())+'\r'
+        self.ser.write(myinput.encode())
         
 
     def exitmenu(self):
